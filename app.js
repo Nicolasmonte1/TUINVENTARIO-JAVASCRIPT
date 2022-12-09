@@ -22,6 +22,17 @@ if (StockProductosLS) {
 
 console.log(productos);
 
+// FUNCION PARA SUMAR INPUT CANTIDAD EN ARRAY
+
+const sumBar = document.querySelector("#sumBar");
+const sum = document.querySelector("#sum");
+
+function sumar(){
+
+    sum.innerText = productos.reduce((acc, producto) => acc + (producto.cantidad) , 0);
+    
+    }
+
 
 // AGREGO FUNCIONALIDAD A LOS BOTONES DE AGREGAR Y SACAR STOCK
 
@@ -36,7 +47,7 @@ salidaStock.addEventListener('click', (event) => {
         producto: inputProducto.value,
         color: inputColor.value,
         talle: inputTalle.value,
-        cantidad: - inputCantidad.value,
+        cantidad: Number( - inputCantidad.value),
 
     }
 
@@ -47,6 +58,7 @@ salidaStock.addEventListener('click', (event) => {
     localStorage.setItem("StockProductos", JSON.stringify(productos));
 
 })
+
 
 
 ingresoStock.addEventListener('click', (event) => {
@@ -60,7 +72,7 @@ ingresoStock.addEventListener('click', (event) => {
         producto: inputProducto.value,
         color: inputColor.value,
         talle: inputTalle.value,
-        cantidad: inputCantidad.value,
+        cantidad: Number(inputCantidad.value),
 
     }
 
@@ -109,6 +121,7 @@ function agregar(busqueda) {
     contenedorProductos.append(tr);
 
 })
+sumar()
 }
 
 agregar(productos);
@@ -117,7 +130,7 @@ agregar(StockProductosLS);
 
 // AGREGO FUNCIONALIDAD A LOS BOTONES DE FILTRO Y OTRAS PROPIEDAS DENTRO DEL ARRAY
 
-let mostrar = document.getElementById('mostrarMov');
+const mostrar = document.getElementById('mostrarMov');
 
 mostrar.addEventListener("click", () => {
 
@@ -128,23 +141,9 @@ mostrar.addEventListener("click", () => {
 botonBuscar.addEventListener("click", () => {
 
         const busquedaProductos = productos.filter(producto => producto.producto == buscarValue.value);
-
+        
+        sumar(busquedaProductos);
         agregar(busquedaProductos);
 })
-
-
-const sumBar = document.querySelector("#sumBar");
-
-const sum = productos.reduce((suma, producto) => suma + producto.cantidad, 0)
-
-console.log(sum)
-
-
-
-
-
-
-
-
 
 
