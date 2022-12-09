@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>TU INVENTARIO ONLINE</title>
+</head>
+<body>
+    <div class="grid">
+        
+        <form class="agregarProducto">
+            
+            <p class="title">PRODUCTO</p>
+            <input class="box" id="producto" type="text">
+            <p class="title">COLOR</p>
+            <input class="box" id="color" type="text">
+            <p class="title">TALLE</p>
+            <input class="box" id="talle" type="text">
+            <p class="title">CANTIDAD</p>
+            <input class="box" id="cantidad" type="text">
+            <button type="submit" id="ingresoStock" class="ingresoStock">AGREGAR STOCK</button>
+            <button type="submit" id="salidaStock" class="salidaStock">SACAR STOCK</button>
+
+        </form>
+        <div class="buscarProducto">
+
+            <div class="grid2">
+
+            <p class="title">BUSCA TU PRODUCTO</p>
+
+            <input class="box" id="buscarValue" type="text">
+            <button class="tituloTabla btnBuscar" id="botonBuscar">BUSCAR</button>
+            <button class="tituloTabla btnmostrar" id="mostrarMov">MOSTRAR TODOS LOS MOVIMIENTOS</button>
+
+            </div>
+
+            <table id="contenedorProductos">
+                <tr>
+                    <th class="tituloTabla">Producto</th>
+                    <th class="tituloTabla">Color</th>
+                    <th class="tituloTabla">Talle</th>
+                    <th class="tituloTabla">Cantidad</th>
+                </tr>
+                
+            </table>
+            <hr>
+            <table class="sumBar" id="sumBar">
+            
+                <tr>
+                   
+                    <th class="tituloTabla2">TOTAL</th>
+                    <th class="tituloTabla2" id="sum"></th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <script src="../app.js"></script>
+</body>
+</html>
